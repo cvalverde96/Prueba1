@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Content</title>
+    <style>
+        .audio-container {
+            position: fixed; /* Keep audio at the top of the page */
+            top: 10px; /* Distance from the top of the page */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust horizontal centering */
+            z-index: 1000; /* Ensure it's above other content */
+            text-align: center; /* Center the text and audio controls */
+        }
+        .image-border {
+            border: 10px solid black;
+        }
+        .top-left {
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            top: 0;
+            left: 0px;
+        }
+        .top-right {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            right: 0px;
+        }
+        .bottom-left {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .bottom-right-link {
+             position: absolute;
+             bottom: 50px; /* Increase this value to move the link higher */
+             right: 10px;
+        }
+        body, html {
+            height: 100%; /* Full height of the viewport */
+            margin: 0; /* Remove default margin */
+            display: flex; /* Use flexbox */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            text-align: center; /* Center text inside the div */
+            padding-top: 90px; /* Add space at the top for the audio player */
+        }
+        .centered-content {
+            width: 80%; /* Adjust width as necessary */
+            max-width: 600px; /* Maximum width */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="audio-container">
+        <p>Presione PLAY a su peor conveniencia</p>
+        <audio controls autoplay loop>
+            <source src="Evil_organ.mp3" type="audio/mpeg">
+            <source src="Evil_organ.wav" type="audio/wav">
+        </audio>
+    </div>
+    <img src="revil.png" class="top-left image-border">
+    <img src="anti_bank.jpg" class="top-right image-border">
+    <img src="anti-technology.png" class="bottom-left image-border">
+    <a href="Login.html" class="bottom-right-link">Para encontrar al verdadero Carlos; Por favor presione aquí</a>
+    <div class="centered-content">
+        <p>
+            <strong>¡Yo soy Karloz Malberde! </strong> <br>
+            ¡Deniego la tecnología y su accesibilidad inmediata a la información, para mantenerme al tanto, hablo con mi vecina chismosa! <br>
+            ¡Me rehúso a cualquier tipo de esfuerzo laboral, no tengo por qué trabajar árduamente si mejor es quedarse dormido en la hamaca de uno! <br>
+            ¡Los bancos son un sistema corrupto de acumulación de dinero! ¡Mantengo todo mi dinero en un barril que lleva en mi familia desde los 1800s! <br>
+            ¡La inactividad, esa es mi forma preferida de protestar! Y con eso digo, ¡abajo los bancos, 
+            abajo los sistemas educativos, y abajo la tecnología! Muajajajajaja (se ríe en malvado)
+        </p>
+    </div>
+</body>
+</html>

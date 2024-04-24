@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Form</title>
+    <style>
+            .audio-container {
+            position: fixed; /* Keep audio at the top of the page */
+            top: 10px; /* Distance from the top of the page */
+            left: 25%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust horizontal centering */
+            z-index: 1000; /* Ensure it's above other content */
+            text-align: left; /* Center the text and audio controls */
+        }
+           #timer {
+            font-size: 24px; /* Larger text for the timer */
+            font-family: Arial, sans-serif; /* Stylish, readable font */
+            color: #cb6221; /* Dark grey color for the timer text */
+        }
+        body, html {
+            height: 100%; /* Full height */
+            margin: 0; /* Remove default margin */
+            display: flex; /* Enable flexbox */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            font-family: Arial, sans-serif; /* Set a nice font */
+            text-align: center; /* Ensure text is centered */
+        }
+
+        .container {
+            display: flex; /* Enable flexbox */
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center children horizontally */
+            justify-content: center; /* Center children vertically */
+        }
+
+        .lists-container {
+            display: flex; /* Flex container for side-by-side lists */
+            justify-content: center; /* Center the lists horizontally */
+            width: 100%; /* Take up full width to accommodate both lists */
+        }
+
+        .no-bullets {
+            list-style-type: none; /* Removes bullet points */
+            padding: 0; /* Removes default padding */
+            margin: 10px; /* Adds margin around each list for better spacing */
+            flex: 1; /* Each list flexes to fill available space equally */
+        }
+
+        form {
+            margin-top: 20px; /* Add space between the text and the form */
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional: adds shadow for better visibility */
+            width: 100%; /* Ensures form width is responsive */
+            max-width: 360px; /* Maximum width of the form */
+        }
+    </style>
+        <script>
+            function validateForm() {
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                if (username == "Holberton" && password == "Programador") {
+                    window.location.href = "Valverde.html";
+                    return false;
+                } else {
+                    alert("Invalid username or password");
+                    return false;
+                }
+            }
+                // Set the date we're counting down to
+                var countDownDate = new Date();
+        countDownDate.setMinutes(countDownDate.getMinutes() + 5); // Add 5 minutes to the current time
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+            
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for minutes and seconds
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result in the element with id="timer"
+            document.getElementById("timer").innerHTML = minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
+            
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+            }
+        }, 1000);
+        document.getElementById("timer").innerHTML = "Se acabó el tiempo";
+    </script>
+        </script>    
+</head>
+<body background="Space2.jpg">
+    <div class="audio-container">
+        <audio controls autoplay loop>
+            <source src="Twilight_zone.mp3" type="audio/mpeg">
+            <source src="Twilight_zone.wav" type="audio/wav">
+        </audio>
+    </div>
+    <div class="container">
+        <div id="timer">05:00</div> <!-- Timer display -->
+        <span style="color: rgb(241, 241, 244);">
+        <p> ¡O no! ¡Ese era Karloz Malbelde! El clon malévolo de <span style="color: green;">Carlos Valverde</span></p>
+        <p> Malbelde ha enviado a Valverde a un dimensión lejana </p>
+        <p> <Strong> <span style="color: rgb(255, 255, 255);">¡APÚRATE</span></Strong> y entra este código secreto para poder rescatar al verdadero <span style="color: green;">Carlos Valverde</span></p>
+        <span>
+        <div class="lists-container">
+            <ul class="no-bullets">
+                <li><span style="color: blue;">H</span>abitare</li>
+                <li><span style="color: blue;">o</span>bsequentia</li>
+                <li><span style="color: blue;">l</span>acus</li>
+                <li><span style="color: blue;">b</span>ardus</li>
+                <li><span style="color: blue;">e</span>cclesia</li>
+                <li><span style="color: blue;">r</span>ramus</li>
+                <li><span style="color: blue;">t</span>abacum</li>
+                <li><span style="color: blue;">o</span>bservatio</li>
+                <li><span style="color: blue;">n</span>arro</li>
+            </ul>
+            <ul class="no-bullets">
+                <li><span style="color: red;">P</span>ater</li>
+                <li><span style="color: red;">r</span>aedarius</li>
+                <li><span style="color: red;">o</span>bsequentia</li>
+                <li><span style="color: red;">g</span>alea</li>
+                <li><span style="color: red;">r</span>arus</li>
+                <li><span style="color: red;">a</span>etatis</li>
+                <li><span style="color: red;">m</span>agnus</li>
+                <li><span style="color: red;">a</span>bbatia</li>
+                <li><span style="color: red;">d</span>ebilito</li>
+                <li><span style="color: red;">o</span>biurgatio</li>
+                <li><span style="color: red;">r</span>adicula</li>
+            </ul>
+        </div>
+        <form onsubmit="return validateForm()">
+            <div>
+                <label for="username"><span style="color: blue;">Usuario: </span></label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password"><span style="color: red;">Contraseña: </span>:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
